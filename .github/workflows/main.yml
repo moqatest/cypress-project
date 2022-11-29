@@ -1,21 +1,15 @@
-name: run my Cypress tests
-on: 
-  push:
-    branches:
-      - 'main'
-  workflow_dispatch:
-
+name: cypress test - signup
+on: [push]
 jobs:
-  checkout-and-test:
-    runs-on: ubuntu-latest
+  cypress-run:
+    runs-on: ubuntu-20.04
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-
-      - name: Check out repository code
+      - name: Checkout
         uses: actions/checkout@v2
-
-      - name: run cypress tests
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
         uses: cypress-io/github-action@v2
-        timeout-minutes: 10
         with:
-          browser: chrome
+          # to run component tests we need to use "cypress run-ct"
+          command: cypress run --env grepTags=@signup
