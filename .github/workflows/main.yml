@@ -1,4 +1,4 @@
-name: cypress test - signup
+name: cypress test - signup page
 on: [push]
 jobs:
   cypress-run:
@@ -12,4 +12,4 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           # to run component tests we need to use "cypress run"
-          command:  npm run smoke
+          command:  npm run signup
