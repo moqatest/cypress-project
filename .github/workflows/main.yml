@@ -12,4 +12,4 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           # to run component tests we need to use "cypress run-ct"
-          command: cypress run --env grepTags=@signup
+          command:  npm run signup
