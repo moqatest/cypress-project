@@ -21,6 +21,9 @@ Once all the dependencies are installed, run any tagged tests. Currently the pro
 'npm run login' - uses the tag to run any tests tagged 'login'
 'npm run smoke' - uses the tag to run any tests tagged 'smoke'
 
+# Report
+Once the test is finished, a HTML report will be available inside the cypress/report folder
+
 # How to run GitHub Action
 
 A simple signup page verification test has been setup to run as GitHub Action.
